@@ -19,6 +19,7 @@ jobs:
           heroku_email: "harshag373@gmail.com"
           
   market-backend:
+    needs: [market]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
