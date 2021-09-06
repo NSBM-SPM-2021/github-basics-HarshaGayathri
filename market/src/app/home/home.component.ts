@@ -4,6 +4,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { AppService } from '../app.service';
 import { NotifierService } from '../notifier.service';
+import { HOST } from 'src/common';
 
 @Component({
   selector: 'app-home',
@@ -65,7 +66,7 @@ export class HomeComponent {
   }
 
   getImage(imageName: string): string {
-    return 'url('+ 'http://localhost:3000/images/'+ imageName + '.jpg' + ')';
+    return 'url('+ HOST +'images/'+ imageName + '.jpg' + ')';
   }
 
 
