@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$market-primary: mat.define-palette(mat.$indigo-palette);
-$market-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$market-primary: mat.define-palette(mat.$light-blue-palette);
+$market-accent: mat.define-palette(mat.$light-green-palette);
 
 // The warn palette is optional (defaults to red).
 $market-warn: mat.define-palette(mat.$red-palette);
@@ -33,3 +33,19 @@ $market-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($market-theme);
 
+
+//for dark theme
+$market-primary-dark: mat.define-palette(mat.$orange-palette);
+$market-accent-dark: mat.define-palette(mat.$yellow-palette);
+$market-warn-dark: mat.define-palette(mat.$red-palette);
+
+$market-theme-dark: mat.define-dark-theme((
+  color: (
+    primary: $market-primary-dark,
+    accent: $market-accent-dark,
+    warn: $market-warn-dark,
+  )
+));
+.dark-theme-mode {
+    @include mat.all-component-themes($market-theme-dark);
+}
