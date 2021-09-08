@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { LoaderService } from '../loader/loader.service';
 
 @Component({
   selector: 'app-nav',
@@ -17,14 +18,13 @@ export class NavComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+    public LoaderService:LoaderService) {}
 
   ngOnInit(){
     this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
 
   }
-
-
 
   storeThemeSelection() {
     localStorage.setItem('theme', this.isDarkTheme ? "Dark":"Light");
