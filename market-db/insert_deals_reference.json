@@ -1,0 +1,36 @@
+[
+    { "imageName":"offer1",
+        "title": "10% off on Footwears",
+        "handsetClos":2,
+        "handsetRows":1,
+        "webClos":2,
+        "webRows":1
+    },
+
+    { "imageName":"offer2",
+        "title": "flash sales in ladies wear",
+        "handsetClos":2,
+        "handsetRows":1,
+        "webClos":1,
+        "webRows":1
+    
+    },
+
+    { "imageName":"offer3",
+        "title": "Special discount on men's clothes",
+        "handsetClos":2,
+        "handsetRows":1,
+        "webClos":1,
+        "webRows":2
+    
+    },
+
+    { "imageName":"offer4",
+        "title": "5% discount for Cosmetics",
+        "handsetClos":2,
+        "handsetRows":1,
+        "webClos":1,
+        "webRows":1
+    
+    }
+]
