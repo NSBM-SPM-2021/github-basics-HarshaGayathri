@@ -7,7 +7,7 @@ import { LoaderService } from '../loader/loader.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
   
@@ -23,7 +23,6 @@ export class NavComponent {
 
   ngOnInit(){
     this.isDarkTheme = localStorage.getItem('theme') === "Dark" ? true : false;
-
   }
 
   storeThemeSelection() {
