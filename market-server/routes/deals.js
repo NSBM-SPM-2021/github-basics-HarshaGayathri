@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
     
   // }, 3000);
 
-  dbAbstractionLayer.queryDealsCollection().chen(response=>{
+  dbAbstractionLayer.queryDealsCollection().then(response=>{
     res.json(response);
   }).catch(error=>{
     res.status(500).json({});

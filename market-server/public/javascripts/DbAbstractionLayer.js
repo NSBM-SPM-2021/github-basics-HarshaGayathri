@@ -3,15 +3,20 @@ var mongodb = require('mongodb');
 var connected = false;
 var db = null;
 
-mongodb.MongoClient.connect('mongodb://localhost:27017',{useUnifiedTopology:true}).then(connection=>{
+mongodb.MongoClient.connect("mongodb+srv://harsha:251773@market.bhneh.mongodb.net/market?retryWrites=true&w=majority",
+{
+    useUnifiedTopology:true,
+    useNewUrlParser: true
+}).then(connection=>{
     connected = true;
-    db = connection.db('market');
+    db = connection.db('market')
 
     console.log("DB connection successful");
 }).catch(error=>{
     console.log("Error in connecting to DB");
 
 });
+
 
 async function queryDealsCollection(){
     if (connected){

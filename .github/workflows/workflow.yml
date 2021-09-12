@@ -6,7 +6,19 @@ on:
       - development
 
 jobs:
+  market-backend: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          branch: development
+          appdir: ./market-server
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "mkrtback" #Must be unique in Heroku
+          heroku_email: "harshag373@gmail.com"
   market:
+    needs: [market-backend]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,15 +30,4 @@ jobs:
           heroku_app_name: "mkrt" #Must be unique in Heroku
           heroku_email: "harshag373@gmail.com"
           
-  market-backend:
-    needs: [market]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          branch: development
-          appdir: ./market-server
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "mkrtback" #Must be unique in Heroku
-          heroku_email: "harshag373@gmail.com"
+
